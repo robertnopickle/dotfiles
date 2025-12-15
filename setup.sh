@@ -38,7 +38,7 @@ npm install -g @github/copilot
 # Dotfiles..
 mkdir -p $HOME/.config/nvim
 
-ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+# ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 
 ln -sf $(pwd)/.config/nvim/* $HOME/.config/nvim/
 ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
@@ -47,4 +47,4 @@ ln -sf $(pwd)/.ignore $HOME/.ignore
 # Install NeoVim plugins
 nvim --headless "+Lazy! sync" +qa
 
-sudo chsh -s "$(which zsh)" "$(whoami)"u
+sudo chsh -s "$(which zsh)" "$(whoami)"
