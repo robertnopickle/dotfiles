@@ -21,6 +21,8 @@ wget https://github.com/nelsonenzo/tmux-appimage/releases/download/3.2a/tmux.app
 sudo chmod u+x tmux.appimage
 sudo mv tmux.appimage /usr/local/bin/tmux
 
+wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
 # Copy zsh config
 rm -f $HOME/.zshrc
 ln -sf $(pwd)/.zshrc $HOME/.zshrc
