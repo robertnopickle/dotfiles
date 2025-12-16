@@ -37,9 +37,9 @@ npm install -g @github/copilot
 
 # Dotfiles..
 mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.config/tmux
 
-# ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
-
+ln -sf $(pwd)/.config/tmux/.tmux.conf $HOME/.config/tmux/.tmux.conf
 ln -sf $(pwd)/.config/nvim/* $HOME/.config/nvim/
 ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 ln -sf $(pwd)/.ignore $HOME/.ignore
