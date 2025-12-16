@@ -36,15 +36,19 @@ nvm install 24
 npm install -g @github/copilot
 
 # Dotfiles..
-mkdir -p $HOME/.config/nvim
+mkdir -p "$HOME/.config"
 
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 
-ln -sf $(pwd)/.config/nvim/* $HOME/.config/nvim/
+rm -rf "$HOME/.config/nvim"
+ln -s "$(pwd)/.config/nvim" "$HOME/.config/nvim"
+ls -la "$HOME/.config/nvim/lazy-lock.json"
+rm -rf "$HOME/.local/share/nvim" "$HOME/.cache/nvim"
 ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 ln -sf $(pwd)/.ignore $HOME/.ignore
 
+
 # Install NeoVim plugins
-nvim --headless "+Lazy! sync" +qa
+nvim --headless "+Lazy! restore" +qa
 
 sudo chsh -s "$(which zsh)" "$(whoami)"
