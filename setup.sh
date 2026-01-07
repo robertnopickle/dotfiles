@@ -21,7 +21,16 @@ wget https://github.com/nelsonenzo/tmux-appimage/releases/download/3.2a/tmux.app
 sudo chmod u+x tmux.appimage
 sudo mv tmux.appimage /usr/local/bin/tmux
 
-wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+# Install starship
+curl -sS https://starship.rs/install.sh | sh
+
+# Install fzf
+rm -rf $HOME/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install --all
+
+# Install zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Copy zsh config
 rm -f $HOME/.zshrc
