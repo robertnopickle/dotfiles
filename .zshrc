@@ -50,6 +50,8 @@ ggp() {
   git push --set-upstream origin "$branch"
 }
 
+export PATH="$HOME/.fzf/bin:$PATH"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
