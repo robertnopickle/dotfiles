@@ -48,7 +48,7 @@ for path in "${CONFIG_FILES[@]}"; do
 
   if [[ -d "$src" ]]; then
     mkdir -p "$(dirname "$dest")"
-    $cp_cmd "$src" "$dest"
+    $cp_cmd "$src/." "$dest"
     echo "✅ Copied directory $src → $dest"
   else
     copy_file "$src" "$dest"
