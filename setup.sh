@@ -22,7 +22,7 @@ sudo chmod u+x tmux.appimage
 sudo mv tmux.appimage /usr/local/bin/tmux
 
 # Install starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Install fzf
 rm -rf $HOME/.fzf
