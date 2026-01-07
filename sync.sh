@@ -34,7 +34,6 @@ echo "📁 Syncing selected ~/.config files"
 
 CONFIG_FILES=(
   ".gitconfig"
-  ".ignore"
   ".tmux.conf"
   ".zshrc"
   ".config/gh"
