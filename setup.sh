@@ -60,4 +60,8 @@ ln -sf $(pwd)/.ignore $HOME/.ignore
 # Install NeoVim plugins
 nvim --headless "+Lazy! restore" +qa
 
+# Install Ruby 3.3.0
+rbenv install 3.3.0
+rbenv global 3.3.0
+
 sudo chsh -s "$(which zsh)" "$(whoami)"
