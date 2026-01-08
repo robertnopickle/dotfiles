@@ -10,13 +10,21 @@ return {
   'christoomey/vim-tmux-navigator',
   {
     'zbirenbaum/copilot.lua',
-    requires = {
-      'copilotlsp-nvim/copilot-lsp', -- (optional) for NES functionality
-    },
     cmd = 'Copilot',
     event = 'InsertEnter',
     opts = {
-      suggestion = { enabled = true },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = '<C-l>',
+          accept_word = '<C-j>',
+          accept_line = '<C-k>',
+          next = '<M-]>',
+          prev = '<M-[>',
+          dismiss = '<C-h>',
+        },
+      },
       panel = { enabled = true },
       nes = { enabled = false },
       filetypes = {
