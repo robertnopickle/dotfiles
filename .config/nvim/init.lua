@@ -212,12 +212,13 @@ require("lazy").setup({
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
+      suggestion = { enabled = true },
+      panel = { enabled = true },
       nes = { enabled = false },
       filetypes = {
         markdown = true,
         help = true,
+        ruby = true,
       },
     },
   },
