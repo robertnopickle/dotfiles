@@ -683,12 +683,12 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        bashls = {},
+        -- bashls = {},
         ruby_lsp = {},
         copilot = {},
         eslint = {},
-        cssmodules_ls = {},
-        graphql = {},
+        -- cssmodules_ls = {},
+        -- graphql = {},
         -- gopls = {},
 
         lua_ls = {
