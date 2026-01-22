@@ -19,6 +19,8 @@ alias ll='ls -lh'
 alias ls='ls -G'
 alias lsa='ls -lah'
 
+alias n='nvim .'
+
 alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
