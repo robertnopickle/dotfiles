@@ -44,6 +44,12 @@ nvm install 24
 # Install Copilot CLI
 npm install -g @github/copilot
 
+# TODO: add install for hammerspoon if MacOS
+
+# Copy hammerspoon config and spoons if MacOS
+# rm -f $HOME/.hammerspoon
+# ln -sf $(pwd)/.hammerspoon $HOME/.hammerspoon
+
 # Dotfiles..
 mkdir -p "$HOME/.config"
 
