@@ -1,4 +1,5 @@
--- hyper key is shift + cmd + alt + ctrl, all on the left side of keyboard
+-- The hyperkey is shift + cmd + alt + ctrl, all on the left side of keyboard
+-- This is remapped to capslock using Karabiner-Elements
 hyperkey = {"lshift", "lcmd", "lalt", "lctrl"}
 
 -- Reload config
@@ -24,9 +25,9 @@ end)
 hs.hotkey.bind(hyperkey, "U", function()
   hs.application.launchOrFocus("Google Chrome")
 end)
--- - switch to terminal window with k
+-- - switch to kitty terminal window with k
 hs.hotkey.bind(hyperkey, "K", function()
-  hs.application.launchOrFocus("iTerm")
+  hs.application.launchOrFocus("kitty")
 end)
 -- - switch to slack window with l
 hs.hotkey.bind(hyperkey, "L", function()
