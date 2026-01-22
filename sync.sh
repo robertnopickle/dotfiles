@@ -37,6 +37,7 @@ CONFIG_FILES=(
   ".tmux.conf"
   ".zshrc"
   ".config/gh"
+  ".hammerspoon"
   ".config/nvim/init.lua"
   ".config/nvim/lua"
   ".config/tmux/tmux.conf"
