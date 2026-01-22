@@ -45,13 +45,18 @@ nvm install 24
 npm install -g @github/copilot
 
 # TODO: add install for hammerspoon if MacOS
-
 # Copy hammerspoon config and spoons if MacOS
 # rm -f $HOME/.hammerspoon
 # ln -sf $(pwd)/.hammerspoon $HOME/.hammerspoon
 
 # Dotfiles..
 mkdir -p "$HOME/.config"
+
+#TODO: add install for kitty terminal if MacOS
+# curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# Copy kitty config if MacOS
+# rm -f $HOME/.config/kitty
+# ln -sf $(pwd)/.config/kitty $HOME/.config/kitty
 
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 
