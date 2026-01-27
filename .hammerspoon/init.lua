@@ -27,7 +27,7 @@ hs.hotkey.bind(hyperkey, "U", function()
 end)
 -- - switch to kitty terminal window with k
 hs.hotkey.bind(hyperkey, "K", function()
-  hs.application.launchOrFocus("kitty")
+  hs.application.launchOrFocus("iterm")
 end)
 -- - switch to slack window with l
 hs.hotkey.bind(hyperkey, "L", function()
