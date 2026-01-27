@@ -17,3 +17,12 @@ end)
 vim.keymap.set('n', '<C-k', function()
   return { '<cmd> TmuxNavigateUp<CR>', 'window up' }
 end)
+
+-- Copy current path and line to clipboard
+vim.opt.clipboard:append('unnamedplus')
+vim.keymap.set('n', '<leader>cpl', function()
+  local file_info = vim.fn.expand('%') .. ':' .. vim.fn.line('.')
+  vim.fn.setreg('+', file_info)
+  print('Path and line copied: ' .. file_info)
+end, { noremap = true, silent = true, desc = '[C]opy current [P]ath and [L]ine' })
+
