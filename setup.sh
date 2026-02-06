@@ -71,6 +71,11 @@ ln -sf $(pwd)/.ignore $HOME/.ignore
 # Install NeoVim plugins
 nvim --headless "+Lazy! restore" +qa
 
+# If this is a github/github codespace, lets add /workspaces/github/bin to the PATH
+if [ -d "/workspaces/github/bin" ]; then
+  echo 'export PATH="/workspaces/github/bin:$PATH"' >> $HOME/.zshrc
+fi
+
 # Install Ruby 3.3.0
 rbenv install 3.3.0
 rbenv global 3.3.0
