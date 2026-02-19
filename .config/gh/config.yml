@@ -15,7 +15,7 @@ aliases:
     co: pr checkout
     dev: cs create --status -r github/github
     pf: cs ports forward 80:80 2206:2206 8081:8081 3011:3011 3014:3014 9091:9091 4318:4318
-    sweagentd-docker: '!gh cs code -c "$(gh cs create -R github/github --devcontainer-path .devcontainer/coding-agent/devcontainer.json -b master -m xLargePremiumLinux256gb)"'
+    capi: cs create -R github/github --devcontainer-path .devcontainer/coding-agent/devcontainer.json -b master -m xLargePremiumLinux256gb
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
