@@ -33,6 +33,9 @@ require("lazy").setup({
   -- Undotree
   "mbbill/undotree",
 
+  -- Diffview
+  "sindrets/diffview.nvim",
+
   -- Detect tabstop and shiftwidth automatically
   'NMAC427/guess-indent.nvim',
 
