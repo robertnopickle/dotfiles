@@ -1,3 +1,10 @@
 [user]
 	email = robertnopickle@github.com
 	name = Robert Garmhausen
+[merge]
+    tool = nvim
+[mergetool "nvim"]
+    cmd = nvim -d -c "wincmd l" -c "norm ]c" "$LOCAL" "$MERGED" "$REMOTE"
+[mergetool]
+    prompt = false
+    keepBackup = false
