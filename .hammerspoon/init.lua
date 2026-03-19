@@ -21,10 +21,6 @@ end)
 hs.hotkey.bind(hyperkey, "J", function()
   hs.application.launchOrFocus("Arc")
 end)
--- - switch to chrome with u
-hs.hotkey.bind(hyperkey, "U", function()
-  hs.application.launchOrFocus("Google Chrome")
-end)
 -- - switch to kitty terminal window with k
 hs.hotkey.bind(hyperkey, "K", function()
   hs.application.launchOrFocus("iterm")
@@ -37,6 +33,16 @@ end)
 hs.hotkey.bind(hyperkey, ";", function()
   hs.application.launchOrFocus("Messages")
 end)
+
+-- - switch to chrome with u
+hs.hotkey.bind(hyperkey, "U", function()
+  hs.application.launchOrFocus("Google Chrome")
+end)
+-- - switch to microsoft teams with i
+hs.hotkey.bind(hyperkey, "I", function()
+  hs.application.launchOrFocus("Microsoft Teams")
+end)
+
 -- - pause/unpause apple music with p
 hs.hotkey.bind(hyperkey, "P", function()
   hs.itunes.playpause()
