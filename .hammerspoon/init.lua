@@ -21,7 +21,7 @@ end)
 hs.hotkey.bind(hyperkey, "J", function()
   hs.application.launchOrFocus("Arc")
 end)
--- - switch to kitty terminal window with k
+-- - switch to terminal window with k
 hs.hotkey.bind(hyperkey, "K", function()
   hs.application.launchOrFocus("iterm")
 end)
