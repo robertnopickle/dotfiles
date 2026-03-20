@@ -42,6 +42,10 @@ end)
 hs.hotkey.bind(hyperkey, "I", function()
   hs.application.launchOrFocus("Microsoft Teams")
 end)
+-- - switch to microsoft outlook with o
+hs.hotkey.bind(hyperkey, "O", function()
+  hs.application.launchOrFocus("Microsoft Outlook")
+end)
 
 -- - pause/unpause apple music with p
 hs.hotkey.bind(hyperkey, "P", function()
