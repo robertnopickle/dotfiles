@@ -1,0 +1,60 @@
+Device: table: 0xb05920b80, Product Name: USB Audio
+Device: table: 0xb05920bc0, Product Name: CH545
+Device: table: 0xb05920d80, Product Name: USB2.1 Hub
+Device: table: 0xb05920880, Product Name: USB 10/100/1000 LAN
+Device: table: 0xb05921140, Product Name: USB2.1 Hub
+Device: table: 0xb059207c0, Product Name: USB3.2 Hub
+Device: table: 0xb05921200, Product Name: USB3.2 Hub
+Device: table: 0xb05920e40, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb05920980, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb05920ac0, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05921640, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05921240, Product Name: nil
+Device: table: 0xb05920940, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb059232c0, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05923240, Product Name: BillBoard Device
+Device: table: 0xb05923000, Product Name: TPS DMC Family
+Device: table: 0xb05923040, Product Name: USB3.0 Hub
+Device: table: 0xb05923180, Product Name: TS4 USB2.0 Hub
+Device: table: 0xb05922fc0, Product Name: Play75
+Device: table: 0xb05923340, Product Name: Play 75
+Device: table: 0xb05923500, Product Name: USB HUB
+Device: table: 0xb05921040, Product Name: OBSBOT Tiny 4K
+Device: table: 0xb05921080, Product Name: GSX 1000 Main Audio
+Device: table: 0xb059210c0, Product Name: Yeti X
+Device: table: 0xb05920b00, Product Name: 4-Port USB 2.0 Hub
+Device: table: 0xb05920a00, Product Name: 4-Port USB 2.0 Hub
+Device: table: 0xb05920a40, Product Name: Virtual HID
+Device: table: 0xb05922a40, Product Name: USB Audio Device
+Device: table: 0xb05920c80, Product Name: Virtual HUB
+Device: table: 0xb05923ac0, Product Name: USB2.1 Hub
+Device: table: 0xb059231c0, Product Name: USB Audio
+Device: table: 0xb05923a80, Product Name: CH545
+Device: table: 0xb05923c80, Product Name: USB2.1 Hub
+Device: table: 0xb059235c0, Product Name: USB 10/100/1000 LAN
+Device: table: 0xb05923a40, Product Name: USB2.1 Hub
+Device: table: 0xb05921980, Product Name: USB3.2 Hub
+Device: table: 0xb05fb1280, Product Name: USB3.2 Hub
+Device: table: 0xb066cdac0, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb066cfc40, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb066cdc00, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05e2cd40, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05e2e480, Product Name: nil
+Device: table: 0xb05e2e9c0, Product Name: TS4 USB2.0 HUB
+Device: table: 0xb05e2c380, Product Name: TS4 USB3.2 Gen2 HUB
+Device: table: 0xb05e2eb40, Product Name: BillBoard Device
+Device: table: 0xb05e2d680, Product Name: TPS DMC Family
+Device: table: 0xb05e2ddc0, Product Name: USB3.0 Hub
+Device: table: 0xb05e2f8c0, Product Name: TS4 USB2.0 Hub
+Device: table: 0xb05e2fac0, Product Name: Play75
+Device: table: 0xb05e2ee00, Product Name: Play 75
+Device: table: 0xb05e2df00, Product Name: USB HUB
+Device: table: 0xb05e2f280, Product Name: OBSBOT Tiny 4K
+Device: table: 0xb05e2f640, Product Name: GSX 1000 Main Audio
+Device: table: 0xb05e2e080, Product Name: Yeti X
+Device: table: 0xb05e2e700, Product Name: 4-Port USB 2.0 Hub
+Device: table: 0xb05e2d300, Product Name: 4-Port USB 2.0 Hub
+Device: table: 0xb05e2de80, Product Name: Virtual HID
+Device: table: 0xb05e2fc00, Product Name: USB Audio Device
+Device: table: 0xb05e2dec0, Product Name: Virtual HUB
+Device: table: 0xb05e2dc80, Product Name: USB2.1 Hub

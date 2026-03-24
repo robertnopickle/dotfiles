@@ -16,6 +16,21 @@ hs.hotkey.bind(hyperkey, "C", function()
   caffeineOn = not caffeineOn
 end)
 
+-- Is the computer docked?
+IsDocked = function()
+  return hs.fnutils.some(hs.usb.attachedDevices(), function(device)
+    return device.productName == "OBSBOT Tiny 4K"
+  end)
+end
+
+-- Elgato key light control toggle with e
+hs.loadSpoon("ElgatoKey"):start()
+hs.hotkey.bind(hyperkey, "E", function()
+  if IsDocked() then
+    spoon.ElgatoKey:toggle()
+  end
+end)
+
 -- App Switching with hotkeys
 -- - switch to arc with j
 hs.hotkey.bind(hyperkey, "J", function()
