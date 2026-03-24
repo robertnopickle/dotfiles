@@ -47,7 +47,27 @@ hs.hotkey.bind(hyperkey, "O", function()
   hs.application.launchOrFocus("Microsoft Outlook")
 end)
 
--- - pause/unpause apple music with p
+-- - switch to 1password with x
+hs.hotkey.bind(hyperkey, "X", function()
+  hs.application.launchOrFocus("1Password")
+end)
+
+-- Apple Music controls
+-- - pause/unpause with p
 hs.hotkey.bind(hyperkey, "P", function()
   hs.itunes.playpause()
+  if hs.itunes.isPlaying() then
+    hs.itunes.displayCurrentTrack()
+  end
 end)
+-- - previous track with [
+hs.hotkey.bind(hyperkey, "[", function()
+  hs.itunes.previous()
+  hs.itunes.displayCurrentTrack()
+end)
+-- - next track with ]
+hs.hotkey.bind(hyperkey, "]", function()
+  hs.itunes.next()
+  hs.itunes.displayCurrentTrack()
+end)
+
