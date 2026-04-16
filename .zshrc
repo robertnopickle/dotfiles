@@ -66,3 +66,4 @@ eval "$(starship init zsh)"
 # rbenv shim
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+export PATH="$HOME/bin:$PATH"
