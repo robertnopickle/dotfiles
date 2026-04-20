@@ -16,7 +16,7 @@ hs.hotkey.bind(hyperkey, "C", function()
   caffeineOn = not caffeineOn
 end)
 
--- Is the computer docked?
+-- Is the computer docked?  If my desk camera is sensed then yes!
 IsDocked = function()
   return hs.fnutils.some(hs.usb.attachedDevices(), function(device)
     return device.productName == "OBSBOT Tiny 4K"
@@ -27,7 +27,12 @@ end
 hs.loadSpoon("ElgatoKey"):start()
 hs.hotkey.bind(hyperkey, "E", function()
   if IsDocked() then
-    spoon.ElgatoKey:toggle()
+    if not spoon.ElgatoKey.isConnected() then
+      spoon.ElgatoKey.findServices()
+      hs.timer.doAfter(1, function() spoon.ElgatoKey:toggle() end)
+    else
+      spoon.ElgatoKey:toggle()
+    end
   end
 end)
 
