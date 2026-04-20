@@ -63,6 +63,10 @@ eval "$(zoxide init zsh)"
 # Set up the Starship prompt
 eval "$(starship init zsh)"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # rbenv shim
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
