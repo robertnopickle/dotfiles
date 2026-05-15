@@ -59,24 +59,49 @@ npm install -g @github/copilot
 # ---------------------------------------------------------------------------
 # 5. Symlink dotfiles
 # ---------------------------------------------------------------------------
-ln -sf "$DOTFILES_DIR/.zshrc"      "$HOME/.zshrc"
-ln -sf "$DOTFILES_DIR/.gitconfig"  "$HOME/.gitconfig"
-ln -sf "$DOTFILES_DIR/.tmux.conf"  "$HOME/.tmux.conf"
-ln -sf "$DOTFILES_DIR/.ignore"     "$HOME/.ignore"
+# Replace target with a symlink to the dotfiles version, but only if the
+# existing target is not already a symlink to that same path. Keeps reruns
+# safe and avoids destroying user-installed plugin/cache state.
+link_dotfile() {
+  local src="$1"
+  local dest="$2"
+  if [[ -L "$dest" && "$(readlink "$dest")" == "$src" ]]; then
+    return 0
+  fi
+  rm -rf "$dest"
+  ln -s "$src" "$dest"
+}
 
-# Hammerspoon (directory — remove any existing dir/symlink first)
-rm -rf "$HOME/.hammerspoon"
-ln -sf "$DOTFILES_DIR/.hammerspoon" "$HOME/.hammerspoon"
+link_dotfile "$DOTFILES_DIR/.zshrc"     "$HOME/.zshrc"
+link_dotfile "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+link_dotfile "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+link_dotfile "$DOTFILES_DIR/.ignore"    "$HOME/.ignore"
 
-# Neovim config
+# Hammerspoon
+link_dotfile "$DOTFILES_DIR/.hammerspoon" "$HOME/.hammerspoon"
+
+# Neovim config — only wipe plugin/cache state on first install
 mkdir -p "$HOME/.config"
-rm -rf "$HOME/.config/nvim"
-ln -s "$DOTFILES_DIR/.config/nvim" "$HOME/.config/nvim"
-rm -rf "$HOME/.local/share/nvim" "$HOME/.cache/nvim"
+NVIM_FRESH_INSTALL=false
+if [[ ! -L "$HOME/.config/nvim" || "$(readlink "$HOME/.config/nvim")" != "$DOTFILES_DIR/.config/nvim" ]]; then
+  NVIM_FRESH_INSTALL=true
+fi
+link_dotfile "$DOTFILES_DIR/.config/nvim" "$HOME/.config/nvim"
+if [[ "$NVIM_FRESH_INSTALL" == "true" ]]; then
+  rm -rf "$HOME/.local/share/nvim" "$HOME/.cache/nvim"
+fi
 
 # gh CLI config (only config.yml, not auth hosts)
 mkdir -p "$HOME/.config/gh"
 ln -sf "$DOTFILES_DIR/.config/gh/config.yml" "$HOME/.config/gh/config.yml"
+
+# iTerm2 — point it at the version-controlled prefs folder in this repo.
+# iTerm2 will read on launch and (with selection=2) auto-save changes back.
+if [[ -f "$DOTFILES_DIR/.config/iterm2/com.googlecode.iterm2.plist" ]]; then
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$DOTFILES_DIR/.config/iterm2"
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+  defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 2
+fi
 
 # ---------------------------------------------------------------------------
 # 6. tmux plugin manager (TPM)
@@ -128,4 +153,6 @@ killall Dock 2>/dev/null || true
 
 echo ""
 echo "✅ Mac setup complete! Open a new terminal (iTerm2) for changes to take effect."
+echo "   If iTerm2 is already running, fully quit it (⌘Q) and relaunch so it picks up"
+echo "   prefs from $DOTFILES_DIR/.config/iterm2."
 echo "📋 Log saved to ~/dotfiles_install_log"

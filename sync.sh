@@ -57,3 +57,20 @@ for path in "${CONFIG_FILES[@]}"; do
   fi
 done
 
+# iTerm2 — convert binary plist to XML for git-friendly diffs.
+# Note: with iTerm2 configured to use a custom prefs folder, it auto-writes to the
+# repo on quit; this step is a safety net for cases where iTerm2 hasn't been quit.
+ITERM_PLIST_SRC="$HOME_DIR/Library/Preferences/com.googlecode.iterm2.plist"
+ITERM_PLIST_DEST="$DOTFILES_DIR/.config/iterm2/com.googlecode.iterm2.plist"
+if [[ -f "$ITERM_PLIST_SRC" ]]; then
+  mkdir -p "$(dirname "$ITERM_PLIST_DEST")"
+  if [[ "$DRY_RUN" == "true" ]]; then
+    echo "DRY_RUN: plutil -convert xml1 -o $ITERM_PLIST_DEST $ITERM_PLIST_SRC"
+  else
+    plutil -convert xml1 -o "$ITERM_PLIST_DEST" "$ITERM_PLIST_SRC"
+  fi
+  echo "✅ Exported iTerm2 prefs → $ITERM_PLIST_DEST"
+else
+  echo "⚠️  Skipping iTerm2: $ITERM_PLIST_SRC not found"
+fi
+

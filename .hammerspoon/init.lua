@@ -91,3 +91,7 @@ hs.hotkey.bind(hyperkey, "]", function()
   hs.itunes.displayCurrentTrack()
 end)
 
+-- Extra Teams controls
+-- - toggle mute with i + m
+
+-- - toggle hand raise with i + h
